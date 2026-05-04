@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Play, Image as ImageIcon, Mail, MessageCircle, ExternalLink } from 'lucide-react';
 
 const portfolioData = {
@@ -40,7 +40,6 @@ export default function App() {
         <h1 className="text-6xl md:text-7xl font-black tracking-tighter mb-4 text-white drop-shadow-xl uppercase">
           @.niingel
         </h1>
-        {/* Cor do texto alterada para um roxo mais escuro e legível */}
         <p className="text-xl font-bold text-purple-900/80 mb-8 max-w-2xl mx-auto drop-shadow-sm">
           Editora de Vídeo & Designer Gráfico. Transformando ideias em conteúdo visual com impacto, ritmo e estética.
         </p>
@@ -91,7 +90,6 @@ export default function App() {
       {/* Galeria */}
       <main className="max-w-5xl mx-auto px-6 pb-24">
         {activeTab === 'videos' ? (
-          // Grade alterada para 2 colunas no computador (md:grid-cols-2) para os vídeos ficarem imensos!
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
             {portfolioData.videos.map((video) => (
               <div key={video.id} className="flex flex-col gap-4">
@@ -106,7 +104,6 @@ export default function App() {
                     ></iframe>
                   </div>
                 </div>
-                {/* Novo botão direto para o TikTok */}
                 <a 
                   href={video.linkUrl} 
                   target="_blank" 
@@ -137,16 +134,30 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer id="contato" className="border-t-2 border-white/40 bg-white/20 backdrop-blur-sm py-12 text-center">
+      <footer id="contato" className="border-t-2 border-white/40 bg-white/20 backdrop-blur-sm py-12 text-center relative">
         <h2 className="text-3xl font-black text-white drop-shadow-md mb-4">Gostou do trabalho?</h2>
         <p className="text-purple-900 font-medium mb-8 max-w-md mx-auto">
           Mande uma mensagem para discutirmos o próximo projeto visual da sua marca ou perfil.
         </p>
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 mb-16">
           <a href="mailto:gabrielafekete7@gmail.com" className="flex items-center gap-2 text-purple-900 hover:text-purple-700 font-bold bg-white/60 px-6 py-3 rounded-full shadow-sm border border-white/50 transition-colors">
             <Mail size={20} />
             gabrielafekete7@gmail.com
           </a>
+        </div>
+
+        {/* Seus Créditos Aqui */}
+        <div className="mt-8 pt-6 border-t border-purple-900/10 text-xs font-semibold text-purple-900/50 flex flex-col items-center gap-2">
+          <p>Desenvolvido por Arthur Costa</p>
+          <div className="flex gap-4">
+            <a href="https://github.com/Arthurpcosta1" target="_blank" rel="noreferrer" className="hover:text-purple-900 transition-colors">
+              GitHub: Arthurpcosta1
+            </a>
+            <span>•</span>
+            <a href="https://instagram.com/Arthurpcosta_" target="_blank" rel="noreferrer" className="hover:text-purple-900 transition-colors">
+              Instagram: @Arthurpcosta_
+            </a>
+          </div>
         </div>
       </footer>
     </div>
