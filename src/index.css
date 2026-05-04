@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Esconde a barra de rolagem padrão mas permite o scroll */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+* {
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para IE e Edge */
+}
